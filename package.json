@@ -1,0 +1,20 @@
+{
+  "name": "my-transit",
+  "version": "1.0.0",
+  "description": "Customized Transit Reports",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/drewmoore/my-transit.git",
+  "author": "Andrew Moore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drewmoore/my-transit/issues"
+  },
+  "homepage": "https://github.com/drewmoore/my-transit#readme",
+  "dependencies": {
+    "express": "4.16.3"
+  }
+}
