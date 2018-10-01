@@ -1,5 +1,3 @@
-# FROM docker-library:mongo
-
 FROM node:8.12.0
 
 ENV WEB_PORT=4000
