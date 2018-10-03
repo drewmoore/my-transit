@@ -1,6 +1,6 @@
 {
   "name": "my-transit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Customized Transit Reports",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,7 @@
   },
   "homepage": "https://github.com/drewmoore/my-transit#readme",
   "dependencies": {
-    "express": "4.16.3"
+    "express": "4.16.3",
+    "mongoose": "5.3.1"
   }
 }

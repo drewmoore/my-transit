@@ -5,6 +5,13 @@ services:
     volumes:
       - "./:/app"
     command: npm start
+    links:
+      - mongo
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_DB_NAME=my-transit
+      - MONGO_URL=mongodb://localhost
     deploy:
       replicas: 5
       resources:
@@ -17,5 +24,13 @@ services:
       - "80:4000"
     networks:
       - webnet
+  mongo:
+    image: mongo:4.0
+    volumes:
+      - mongo-data:/data/db
+    expose:
+      - "27017"
 networks:
   webnet:
+volumes:
+  mongo-data:
