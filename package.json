@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest"
+    "test": "MONGO_DB_NAME=my-transit-test jest --detectOpenHandles"
   },
   "repository": "git+https://github.com/drewmoore/my-transit.git",
   "author": "Andrew Moore",

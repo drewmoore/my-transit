@@ -5,13 +5,17 @@ services:
     volumes:
       - "./:/app"
     command: npm start
-    links:
-      - mongo
     depends_on:
       - mongo
+    links:
+      - mongo:mongo
     environment:
       - MONGO_DB_NAME=my-transit
-      - MONGO_URL=mongodb://localhost
+      - MONGO_URL=mongodb://mongo:27017
+    ports:
+      - "80:4000"
+    networks:
+      - webnet
     deploy:
       replicas: 5
       resources:
@@ -20,17 +24,17 @@ services:
           memory: 50M
       restart_policy:
         condition: on-failure
-    ports:
-      - "80:4000"
-    networks:
-      - webnet
   mongo:
     image: mongo:4.0
     volumes:
-      - mongo-data:/data/db
+      - "mongo:/data/db"
+    networks:
+      - webnet
+    ports:
+      - "27017:27017"
     expose:
       - "27017"
 networks:
   webnet:
 volumes:
-  mongo-data:
+  mongo:
