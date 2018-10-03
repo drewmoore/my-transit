@@ -1,7 +1,10 @@
 version: "3"
 services:
   web:
-    image: cantsnuffthedrewster/my-transit-app:latest
+    build: .
+    volumes:
+      - "./:/app"
+    command: npm start
     deploy:
       replicas: 5
       resources:
