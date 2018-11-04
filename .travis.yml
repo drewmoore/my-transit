@@ -1,20 +1,12 @@
+sudo: false
+language: node_js
 env:
   - DOCKER_COMPOSE_VERSION=1.15.0
-
-language: node_js
-
-node_js:
-  - "11.1.0"
-
-sudo: enabled
-
 services:
   - docker
-
 before_install:
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
-
 script: ./bin/hooks/pre-commit
