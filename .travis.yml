@@ -1,6 +1,11 @@
 env:
   - DOCKER_COMPOSE_VERSION=1.15.0
 
+language: node_js
+
+node_js:
+  - "11.1.0"
+
 sudo: enabled
 
 services:
