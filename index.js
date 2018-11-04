@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const initializeApp = require('./app/app');
 const port = process.env.WEB_PORT;
 

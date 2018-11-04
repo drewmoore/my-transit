@@ -1,5 +1,4 @@
 const request = require('supertest');
-const initializeConnection = require('../lib/db/mongoose');
 const initializeApp = require('./app');
 
 describe('Home Routes', () => {
