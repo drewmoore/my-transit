@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/drewmoore/my-transit.svg?branch=master)](https://travis-ci.org/drewmoore/my-transit)
+[![codecov](https://codecov.io/gh/drewmoore/my-transit/branch/master/graph/badge.svg)](https://codecov.io/gh/drewmoore/my-transit)
+
 
 # My Transit
 Personalized transit reports, currently Berlin's BVG
