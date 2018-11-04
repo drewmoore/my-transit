@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/drewmoore/my-transit.svg?branch=master)](https://travis-ci.org/drewmoore/my-transit)
+
 # My Transit
 Personalized transit reports, currently Berlin's BVG
 
@@ -6,8 +8,7 @@ Personalized transit reports, currently Berlin's BVG
   - `docker build -t cantsnuffthedrewster/my-transit-app .`
 - run tests
   - `docker-compose build`
-  - `docker-compose up`
-  - `docker-compose run web npm test`
+  - `docker-compose run web yarn test`
 - deploy
   - `export DIGITALOCEAN_ACCESS_TOKEN=...;`
   - `docker-machine create --driver digitalocean --digitalocean-region fra1 my-transit`
