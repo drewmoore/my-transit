@@ -11,8 +11,7 @@ const initializeApp = async () => {
     if (connection.readyState === 1) {
       return res.send({ status: 'ok' });
     }
-    res.status(500);
-    return res.render('error', { error: 'database not connected' });
+    return res.send({ error: 'database not connected' });
   });
 
   return  { app, connection };

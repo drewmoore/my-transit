@@ -24,13 +24,27 @@ describe('Home Routes', () => {
       })
   ));
 
-  test('/healthcheck responds successfully', (done) => (
-    request(app)
-      .get('/healthcheck')
-      .expect(200)
-      .then((response) => {
-        expect(response.body.status).toEqual('ok');
-        done();
-      })
-  ));
+  describe('/healthcheck', () => {
+    test('responds successfully', (done) => (
+      request(app)
+        .get('/healthcheck')
+        .expect(200)
+        .then((response) => {
+          expect(response.body.status).toEqual('ok');
+          done();
+        })
+    ));
+
+    test('responds with error', (done) => {
+      connection.close().then(() => {
+        request(app)
+          .get('/healthcheck')
+          .expect(200)
+          .then((response) => {
+            expect(response.body.error).toEqual(expect.stringContaining('database'));
+            done();
+          });
+      });
+    });
+  });
 });
