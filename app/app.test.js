@@ -19,8 +19,8 @@ describe('Home Routes', () => {
       .get('/')
       .expect(200)
       .then((response) => {
-        expect(response.text).toEqual('Yo World!')
-        done()
+        expect(response.text).toEqual('Yo World!');
+        done();
       })
   ));
 

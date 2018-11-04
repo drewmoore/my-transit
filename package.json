@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "MONGO_DB_NAME=my-transit-test jest --detectOpenHandles",
-    "lint": "eslint *.js"
+    "lint": "eslint ."
   },
   "repository": "git+https://github.com/drewmoore/my-transit.git",
   "author": "Andrew Moore",
