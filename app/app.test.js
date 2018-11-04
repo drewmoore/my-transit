@@ -1,20 +1,27 @@
 const request = require('supertest');
-const mongoose = require('../lib/db/mongoose');
-const app = require('./app');
+const initializeConnection = require('../lib/db/mongoose');
+const initializeApp = require('./app');
 
 describe('Home Routes', () => {
-  afterAll((done) => {
-    mongoose.disconnect().then(() => done());
-    done();
+  let app, connection;
+
+  beforeAll(async () => {
+    const application = await initializeApp();
+    app = application.app;
+    connection = application.connection;
   });
+
+  afterAll(() => (
+    connection.close()
+  ));
 
   test('/ responds successfully', (done) => (
     request(app)
       .get('/')
       .expect(200)
       .then((response) => {
-        expect(response.text).toEqual('Yo World!');
-        done();
+        expect(response.text).toEqual('Yo World!')
+        done()
       })
   ));
 

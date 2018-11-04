@@ -1,4 +1,4 @@
-FROM node:8.12.0
+FROM node:11.1.0
 
 ENV WEB_PORT=4000
 
