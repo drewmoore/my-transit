@@ -1,7 +1,13 @@
 const request = require('supertest');
+const mongoose = require('../lib/db/mongoose');
 const app = require('./app');
 
 describe('Home Routes', () => {
+  afterAll((done) => {
+    mongoose.disconnect().then(() => done());
+    done();
+  });
+
   test('/ responds successfully', (done) => (
     request(app)
       .get('/')
