@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "MONGO_DB_NAME=my-transit-test jest --detectOpenHandles",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": "git+https://github.com/drewmoore/my-transit.git",
   "author": "Andrew Moore",
@@ -20,8 +21,13 @@
     "mongoose": "5.3.1"
   },
   "devDependencies": {
+    "codecov": "^3.1.0",
     "eslint": "^5.8.0",
     "jest": "23.6.0",
+    "nyc": "^13.1.0",
     "supertest": "3.3.0"
+  },
+  "jest": {
+    "collectCoverage": true
   }
 }

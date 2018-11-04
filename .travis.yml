@@ -18,3 +18,5 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 
 script: ./bin/hooks/pre-commit
+after_success:
+  - yarn run coverage
