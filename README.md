@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/drewmoore/my-transit.svg?branch=master)](https://travis-ci.org/drewmoore/my-transit)
 [![codecov](https://codecov.io/gh/drewmoore/my-transit/branch/master/graph/badge.svg)](https://codecov.io/gh/drewmoore/my-transit)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/4b8892070e2d36d69702/test_coverage)](https://codeclimate.com/github/drewmoore/my-transit/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4b8892070e2d36d69702/maintainability)](https://codeclimate.com/github/drewmoore/my-transit/maintainability)
 
 
 # My Transit
