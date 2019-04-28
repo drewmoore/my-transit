@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo '127.0.1.1 my-transit.local' | sudo tee --append /etc/hosts;
+
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./deploy/certs/my-transit.key -out ./deploy/certs/my-transit.crt;
+
+sudo cp ./deploy/my-transit.conf /etc/nginx/conf.d/;
+sudo cp ./deploy/certs/*.crt /etc/ssl/certs/;
+sudo cp ./deploy/certs/*.key /etc/ssl/private/;
+
+sudo apt install nginx -y;
+sudo service nginx stop;
+sudo service nginx start;

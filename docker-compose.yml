@@ -4,7 +4,7 @@ services:
     build: .
     volumes:
       - "./:/app"
-    command: npm start
+    command: yarn start
     depends_on:
       - mongo
     links:
@@ -13,7 +13,9 @@ services:
       - MONGO_DB_NAME=my-transit
       - MONGO_URL=mongodb://mongo:27017
     ports:
-      - "80:4000"
+      - "4000:4000"
+    expose:
+      - "4000"
     networks:
       - webnet
     deploy:
