@@ -4,6 +4,6 @@ ENV WEB_PORT=4000
 
 WORKDIR /app
 
-RUN yarn
+RUN yarn install
 
 EXPOSE $WEB_PORT

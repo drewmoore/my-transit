@@ -7,16 +7,25 @@
 # My Transit
 Personalized transit reports, currently Berlin's BVG
 
+## Set-Up Environment
+- install docker
+  - follow steps given at https://docs.docker.com/install/linux/docker-ce/ubuntu/
+  - allow non-root use (allows root-level permissions for user!):
+    - `sudo groupadd docker`
+    - `sudo usermod -G docker -a $USER`
+    - logout/login user. May require system restart
+- install docker-compose
+  - sudo apt install docker-compose
+
 ## Commands
-- build Docker image
-  - `docker build -t cantsnuffthedrewster/my-transit-app .`
 - run tests
-  - `docker-compose build`
   - `docker-compose run web yarn test`
+- run locally
+  - `docker-compose run web`
 - deploy
   - `export DIGITALOCEAN_ACCESS_TOKEN=...;`
   - `docker-machine create --driver digitalocean --digitalocean-region fra1 my-transit`
-  - ` docker-machine ssh my-transit "docker swarm init --advertise-addr ...`
-  - ` docker-machine env my-transit`
+  - `docker-machine ssh my-transit "docker swarm init --advertise-addr ...`
+  - `docker-machine env my-transit`
   - `eval $(docker-machine env my-transit)`
   - `docker stack deploy -c docker-compose.yml my-transit`
